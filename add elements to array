@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+int main() {
+    int size, new_valuefront,new_valueend,new_valuemid,values[size + 1],mid_index;
+
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &size);
+
+    
+    for (int i = 0; i < size; ++i) {
+        printf("Enter value %d: ", i + 1);
+        scanf("%d", &values[i]);
+      }
+       printf("\n"); 
+
+    for (int i = 0; i < size; ++i) {
+        printf("%d",values[i]);
+    }
+    
+    
+    //add a element at front
+    printf("\n"); 
+    printf("Enter a new value to add at the front: ");
+    scanf("%d", &new_valuefront);
+
+    
+    for (int i = size; i > 0; --i) {
+        values[i] = values[i - 1];
+    }
+
+    
+    values[0] = new_valuefront;
+    size++; 
+    
+    
+    
+     //add a eleme  nt at end
+    printf("Enter a new value to add at the end: ");
+    scanf("%d", &new_valueend);
+    for (int i=0;i<0;i++){
+        values[i]=values[size+1];
+    }
+    values[size]=new_valueend;
+    size++;
+    
+    //add a element at mid
+    printf("enter a new value at the middle: ");
+    scanf("%d",&new_valuemid);
+    mid_index=size/2;
+    for(int i=size;i>mid_index;i--){
+        values[i]=values[i-1];
+    }
+    values[mid_index]=new_valuemid;
+    size++;
+        
+    printf("\nUpdated array: ");
+    for (int i = 0; i < size; ++i) {
+        printf("%d ", values[i]);
+    }
+
+    printf("\n"); 
+
+    return 0;
+}
